@@ -1,0 +1,7 @@
+<h1>Book detail</h1>
+<% #ユーザーの設定画像＋その下にユーザーページへのリンク %>
+<p><%= link_to @book.title, book_path(@book.id) %></p>
+<p><%= @book.body %></p>
+
+<% #Editへのリンク %>
+<% #Destroyのリンク %>
