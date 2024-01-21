@@ -1,13 +1,9 @@
 <% #このbookを投稿したユーザー %>
-<div>
-  <h1>User info</h1>
-  <h3><%= @user.name %></h3>
-  <%= @user.introduction %>
-  <%= image_tag @user.get_profile_image(100,100) %>
-  <% if @user == current_user %>
-    <p><%= link_to "編集", edit_user_path(@user.id) %></p>
-  <% end %>
-</div>
+<h1>User info</h1>
+<%= image_tag @user.get_profile_image(100,100) %>
+<h3><%= @user.name %></h3>
+<%= @user.introduction %>
+<%= link_to "編集", edit_user_path(@user.id) %>
 
 <% #新規投稿 %>
 <%= render 'list', book: @book %>
@@ -21,5 +17,7 @@
 <p><%= link_to @book.title, book_path(@book.id) %></p>
 <p><%= @book.body %></p>
 
-<%= link_to 'Edit', edit_book_path(@book.id) %>
-<%= link_to 'Destroy', book_path(@book.id), method: :delete, "data-confirm" => "本当に消しますか？" %>
+<% if @user == current_user %>
+  <%= link_to 'Edit', edit_book_path(@book.id) %>
+  <%= link_to 'Destroy', book_path(@book.id), method: :delete, "data-confirm" => "本当に消しますか？" %>
+<% end %>
