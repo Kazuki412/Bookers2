@@ -16,5 +16,5 @@
 
   <%= f.submit 'Update Book' %>
 <% end %>
-<% #showへのリンク %>
-<% #index（Back）へのリンク %>
+<%= link_to 'Show', book_path(@book.id) %>
+<%= link_to 'Back', books_path %>
