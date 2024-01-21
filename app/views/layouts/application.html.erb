@@ -13,7 +13,7 @@
   <body>
     <header>
       <% if user_signed_in? %>
-        <% #マイページのリンク %>
+        <li><%= link_to 'Home', user_path(current_user.id) %></li>
         <% #ユーザー一覧のリンク %>
         <% #投稿内容の一覧のリンク %>
         <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
