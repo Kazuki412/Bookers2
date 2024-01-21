@@ -1,9 +1,17 @@
+<% #このbookを投稿したユーザー %>
+
+
+<% #新規投稿（ページネーション） %>
+
+
+
+
+
 <h1>Book detail</h1>
 <%= link_to user_path(@user.id) do %>
   <%= image_tag @user.get_profile_image(100,100) %>
   <%= @user.name %>
 <% end %>
-<% #ユーザーの設定画像とユーザー名をユーザーページへのリンク %>
 <p><%= link_to @book.title, book_path(@book.id) %></p>
 <p><%= @book.body %></p>
 
