@@ -1,3 +1,6 @@
+<% #フラッシュメッセージ %>
+<%= flash[:notice] %>
+
 <% #このbookを投稿したユーザー %>
 <h1>User info</h1>
 <%= image_tag @user.get_profile_image(100,100) %>
