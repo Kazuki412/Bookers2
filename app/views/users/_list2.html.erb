@@ -1,5 +1,21 @@
-<h1>User info</h1>
-<%= image_tag user.get_profile_image(100,100) %>
-<h3><%= user.name %></h3>
-<%= user.introduction %>
-<%= link_to "編集", edit_user_path(user.id) %>
+<div class="container">
+  <h1>User info</h1>
+  <p class ="mb-0"><%= image_tag user.get_profile_image(100,100) %></p>
+  <table class="table">
+    <tbody>
+      <tr>
+        <th>name</th>
+        <th><%= user.name %></th>
+      </tr>
+      <tr>
+        <th>introduction</th>
+        <th><%= user.introduction %></th>
+      </tr>
+    </tbody>
+  </table>
+  <button type="button" class="btn btn-outline-secondary w-100 text-grey"><%= link_to edit_user_path(user.id) do %>
+       <i class="fa-solid fa-user-gear"></i>
+     <% end %>
+  </button>
+</div>
+
