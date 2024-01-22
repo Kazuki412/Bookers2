@@ -6,10 +6,20 @@
 
 <% #登録しているユーザー一覧 %>
 <h1>Users</h1>
-<% @users.each do |user| %>
-  <h4>image</h4>
-  <%= image_tag user.get_profile_image(100,100) %>
-  <h4>name</h4>
-  <%= user.name %>
-  <%= link_to 'show', user_path(user.id) %>
-<% end %>
+<table>
+  <thead>
+    <tr>
+      <th>image</th>
+      <th>name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+    <tr>
+      <td><%= image_tag user.get_profile_image(100,100) %></td>
+      <td><%= user.name %></td>
+      <td><%= link_to 'show', user_path(user.id) %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
