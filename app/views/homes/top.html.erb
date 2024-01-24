@@ -1,14 +1,10 @@
-<% #フラッシュメッセージ%>
-<%= flash[:notice] %>
-<div class="container">
-  <div class="m-3 col-8">
-    <h1>welcome to <strong><i class="fa-solid fa-book"></i>Bookers!!</strong></h1>
-    <p>In <strong><i class="fa-solid fa-book"></i>Bookers,</strong></p>
-    <p>you can share and exchange your opinions,inpressions,and emotions</p>
-    <p>about various books!</p>
-  </div>
-  <div class="d-grid gap-2 text-center">
-    <button class="btn btn-info w-75 mb-3" type="button"><%= link_to 'Log in', new_user_session_path, class: 'text-white' %></button>
-    <button class="btn btn-success w-75 mb-3" type="button"><%= link_to 'Sign up', new_user_registration_path, class: 'text-white' %></button>
+<div class="m-3 col-10 block-center">
+  <h1>welcome to <strong><i class="fa-solid fa-book"></i>Bookers!!</strong></h1>
+  <p>In <strong><i class="fa-solid fa-book"></i>Bookers,</strong></p>
+  <p>you can share and exchange your opinions,inpressions,and emotions</p>
+  <p>about various books!</p>
+  <div class="col-8 block-center">
+    <div class="button"><%= link_to 'Log in', new_user_session_path, class: 'btn btn-info btn-block mb-3' %></div>
+    <div class="button"><%= link_to 'Sign up', new_user_registration_path, class: 'btn btn-success btn-block' %></div>
   </div>
 </div>
